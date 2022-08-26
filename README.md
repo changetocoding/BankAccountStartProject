@@ -17,13 +17,12 @@ In this phase the users have requested a nicer online user interface. A separate
 
 
 ## Solution overview:
-The solution contains a .NET6 library (Moneybox.App) which is structured into the following 3 folders:
-
-* Domain - this contains the domain models for a user and an account, and a notification service.
-* Features - this contains two operations, one which is implemented (transfer money) and another which isn't (withdraw money)
-* DataAccess - this contains a repository for retrieving and saving an account (and the nested user it belongs to)
-
-
+The solution contains a .NET6 Solution (BankApp) which contains 4 projects:
+- BankApp - A console project
+- BankApp.Core - The core, common and reusable functionality. Used by BankApp and BankApp.Web.
+- BankApp.Test - The Unit tests for BankApp.Core
+- BankApp.Web - The WebApi project - runs as a web service. You can use swagger to test it
+You will need to add an additional project for the database task in phase 2
 
 ## The task
 See User Stories Excel sheet for the details
