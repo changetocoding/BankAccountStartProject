@@ -1,7 +1,7 @@
 ﻿User Stories,,,
 ,,,
-Phase 1,,,
 Id,Name,User story,Details
+Phase 1: Bank Functionality,,,
 1.1,Add an account,I as a customer of XYZ Bank want to be able to open a bank account,"The customer will provide:
 - Their Email.
 They will receive their Account Number (or Id) which is an int. A new account will be created with balance 0 for the user"
@@ -23,10 +23,8 @@ Most of the functionality for this is done. But a test is failing. Fix the faili
 
 The rules for pay-in and withdrawal must be followed"
 1.5,Fraudent Accounts Tracking,"For audit purposes we keep track of the total amount withdrawn and the total amount paid-in. If the total amount paid-in is 100,000,000 or more, we suspect fraud and you should prevent any more pay-ins or withdrawals happening on that account ","If the total paid in is more than 100,000,000 prevent any more pay-ins, withdrawals or transfers happening on that account "
-1.6,Data Encapsulation,"You manager has done a code review of what the previous person did noticed that fields on the Account class that should be encapsulated are not properly encapsulated.
-This means they can be accidentally set to incorrect values by a developer writing code. We should fix this to make our application more secure","Encapsulate Fields: Account.Withdrawn, Account.Balance, and Account.PaidIn so they can be publicly accessed for reading, but only privately set"
 ,,,
-Phase 2,,,
+Phase 2: Data storage,,,
 2.1,Limits increase,The bank has decided to increase the pay in limit and the low balance notification limit after complaints by the users,"- Users are not allowed to pay in more than 40,000 in a single transaction/go
 - Users are not allowed to transfer more than 40,000 in a single transaction
 - Users should be notified if their balance falls below 500 on a withdrawal or transfer"
@@ -38,7 +36,7 @@ You must now store the bank accounts in a database so when the application start
 - Remove InMemoryAccountRepository class and its tests (InMemoryAccountRepositoryTests)
 - When implementing the Updating Account - Ensure only the Balance, Withdrawn and PaidIn fields value change. Any other changes should be ingored"
 ,,,
-Phase 3,,,
+Phase 3: Web Api,,,
 3.1,Account Service API,In this phase the users have requested a nicer online user interface. A separate team will be building the online user interface. Your task is to build a webservice with the endpoints for the operations they want to perform on the bank app.,"Create a webservice that has endpoints to perform the following functionality:
 
 Accounts Controller:
@@ -49,10 +47,13 @@ Features Controller:
 - Pay-in Money
 - Withdraw Money
 - Transfer Money between 2 accounts"
-3.2,(Extra) Email addresses,We've received reports that users are entering values that are not vaild email addresses when creating an account. Enforce a check to make sure the email addresses are valid when creating an account,"Ensure:
+,,,
+Phase 4: Additional tasks,,,
+4.1,(Extra) Email addresses,We've received reports that users are entering values that are not vaild email addresses when creating an account. Enforce a check to make sure the email addresses are valid when creating an account,"Ensure:
 - Email addresses must contain '@' and '.'
 - Reject email address that fail this validation (throw exception) and don't create an account"
-,,,
+4.2,(Extra) Data Encapsulation,"You manager has done a code review of what the previous person did noticed that fields on the Account class that should be encapsulated are not properly encapsulated.
+This means they can be accidentally set to incorrect values by a developer writing code. We should fix this to make our application more secure","Encapsulate Fields: Account.Withdrawn, Account.Balance, and Account.PaidIn so they can be publicly accessed for reading, but only privately set"
 ,,,
 ,,,
 ,,,
