@@ -43,5 +43,11 @@ Tech features:
 - The accounts and balances are stored in a database
 - There is a webservice
 
+## Marking
+Your project will be marked 
+- 1/3 on code
+- 1/3 on working functionality
+- 1/3 on your presentation of the functionality and how you found the project
+
 
 
